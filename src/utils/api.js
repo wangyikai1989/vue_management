@@ -66,6 +66,36 @@ export function fetchGoodDel(params){
     })
 }
 
+// 广告新增
+// img, title, desc
+export function fetchAdAdd(data) {
+    return fetch({
+      url: '/api/v1/ad/add',
+      method: 'POST',
+      data
+    })
+  }
+
+
+// 删除广告
+// { id }
+export function fetchAdDel(params) {
+    return fetch({
+      url: '/api/v1/ad/del',
+      method: 'GET',
+      params
+    })
+  }
+  
+  // 获取广告列表
+  // /list
+  export function fetchAdList(params) {
+    return fetch({
+      url: '/api/v1/ad/list',
+      method: 'GET',
+      params
+    })
+  }
 
 // 商品详情
 // /api/v1/good/detail
@@ -92,5 +122,8 @@ export default{
     fetchAllCates,
     fetchGoodList,
     fetchGoodDel,
-    fetchGoodInfo
+    fetchGoodInfo,
+    fetchAdDel,
+    fetchAdList,
+    fetchAdAdd,
 }

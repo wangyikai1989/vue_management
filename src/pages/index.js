@@ -7,6 +7,7 @@ const MusicDetail = ()=>import('./music/MusicDetail.vue')
 const Todo =()=>import('./home/Todo.vue')
 const GoodList = ()=>import('./good/GoodList.vue')
 const GoodAdd = ()=>import('./good/GoodAdd.vue')
+const Ad = ()=>import('./center/Ad.vue')
 
 import {FindPanelA,FindPanelB} from '../components'
 
@@ -100,6 +101,20 @@ const routes = [
                 component:GoodAdd,
                 isNotNav:true
             }
+        ]
+    },
+    {
+        id:14,
+        text:'营销管理',
+        icon:'el-icon-s-shop',
+        arr:[
+            {
+                id:1301,
+                path:'/ad',
+                component:Ad,
+                text:'轮播图编辑',
+                exact:false
+            },
         ]
     },
 ]
