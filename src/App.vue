@@ -1,28 +1,53 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="qf-app">
+
+    <router-view v-if='$route.path==="/login"' name='login'></router-view>
+      <QfLayout v-else></QfLayout>
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import {QfLayout} from '@/components/'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    QfLayout,
+    // Login
+  },
+  data:function(){
+    return {
+      foo:'hello world',
+      // routes,
+    }
+  },
+  watch:{
+    // $route:function(to,from){
+    //   console.log('url变化',to,from)
+    // }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss" >
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  // overflow: hidden;
+  position: relative;
+}
+.qf-app {
+  height: 100%;
+}
+/* 所有搜索和筛选的文字提示向右靠齐 */
+.qf-filter-label {
+  text-align: right;
+  padding-right: 10px;
+}
+.el-row {
+  margin-bottom: 25px;
 }
 </style>
