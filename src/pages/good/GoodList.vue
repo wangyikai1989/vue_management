@@ -183,7 +183,7 @@ export default {
     },
     // 跳转到商品新增页面
     skipToAdd(){
-      this.$router.history.push('/good/add')
+      this.$router.history.push('/good/add/0')
     },
     // 当size变化时
     sizeChange(val){
